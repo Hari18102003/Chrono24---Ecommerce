@@ -55,8 +55,8 @@ const Navbar = () => {
                     )}
                     {status === "unauthenticated" && (
                         <>
-                            <li className='my-1 md:my-0'><Link href={"/login"}>Login</Link></li>
-                            <li className='my-1 md:my-0'><Link href={"/register"} className='p-3 bg-background rounded-lg'>Sign up</Link></li>
+                            <li className='my-3 md:my-0'><Link href={"/login"}>Login</Link></li>
+                            <li className='my-2 md:my-0'><Link href={"/register"} className='p-3 bg-background rounded-lg'>Sign up</Link></li>
                         </>
                     )}
                 </ul>

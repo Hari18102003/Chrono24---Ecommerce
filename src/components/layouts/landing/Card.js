@@ -1,11 +1,15 @@
 "use client";
 import axios from 'axios';
+import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import React from 'react'
 import toast from 'react-hot-toast';
 import { FaShoppingCart } from "react-icons/fa";
 
 const Card = ({ watch }) => {
+
+    const session = useSession();
+    const { status } = session;
 
     async function handleAddToCart(id) {
         const { data } = await axios.put(`/api/cart/add`, { id, quantity: 1 });
@@ -32,7 +36,9 @@ const Card = ({ watch }) => {
                         </Link>
                         <div className='flex items-center justify-between'>
                             <h3 className='font-bold'>${watch.price}</h3>
-                            <button onClick={() => handleAddToCart(watch._id)}><FaShoppingCart className='0bg-background text-lg' /></button>
+                            {status === "authenticated" && (
+                                <button onClick={() => handleAddToCart(watch._id)}><FaShoppingCart className='0bg-background text-lg' /></button>
+                            )}
                         </div>
                     </div>
                 </div>

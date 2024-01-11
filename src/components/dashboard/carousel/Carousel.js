@@ -36,13 +36,13 @@ const Carousel = () => {
 
                         <SwiperSlide key={watch._id}>
                             <Link href={`/dashboard/watch/${watch._id}`}>
-                                <div className='grid grid-cols-1 md:grid-cols-2'>
+                                <div className='grid grid-cols-1 md:grid-cols-2 pb-5 md:pb-0'>
                                     <div>
-                                        <img className='w-full md:h-[600px]' src={watch.image} />
+                                        <img className='w-full h-[300px] md:h-[600px]' src={watch.image} />
                                     </div>
-                                    <div className='flex pt-5 md:pt-0 flex-col gap-5 items-center justify-center'>
+                                    <div className='flex pt-5 md:pt-0 flex-col gap-2 md:gap-5 items-center justify-center'>
                                         <h4 className='text-lg'>New Release</h4>
-                                        <h1 className='text-xl md:text-3xl font-bold'>{watch.name}</h1>
+                                        <h1 className='text-lg md:text-3xl font-bold'>{watch.name}</h1>
                                         <p>For {watch.gender}</p>
                                         <h5 className='font-semibold text-xl'>Exclusively for ${watch.price}</h5>
                                     </div>
